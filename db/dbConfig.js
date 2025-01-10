@@ -8,8 +8,8 @@ const dbconnection =mysql2.createPool({
 //   connectionLimit:10  
   user: process.env.USER,
   database: process.env.DATABASE,
-  host:"blqbdeyecuthlfs3cb5z-mysql.services.clever-cloud.com",
-  port:"3306",
+  host: process.env.HOST,
+  port: process.env.DB_PORT,
   password:process.env.PASSWORD,
   
   connectionLimit:10  
