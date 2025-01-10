@@ -2,7 +2,7 @@ require('dotenv').config()
 const express=require('express')
 const app=express();
 const cors=require('cors')
-const port=5500;
+const PORT = process.env.PORT || 8080;
 
 
 // database connection
