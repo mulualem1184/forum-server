@@ -6,11 +6,11 @@ const dbconnection =mysql2.createPool({
 //   host:"localhost",
 //   password:process.env.PASSWORD,
 //   connectionLimit:10  
-  user: process.env.USER,
-  database: process.env.DATABASE,
-  host: process.env.HOST,
-  port: process.env.DB_PORT,
-  password:process.env.PASSWORD,
+host: process.env.HOST || 'blqbdeyecuthlfs3cb5z-mysql.services.clever-cloud.com', // Database host
+user: process.env.USER || 'uodmvxdkr8bxehpt',                                     // Database user
+password: process.env.PASSWORD || '9ltDuuNYemiBdUCSfgzX',                         // Database password
+database: process.env.DATABASE || 'blqbdeyecuthlfs3cb5z',                         // Database name
+port: process.env.DB_PORT || 3306,     
   
   connectionLimit:10  
 })

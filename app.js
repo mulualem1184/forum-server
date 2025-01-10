@@ -35,7 +35,7 @@ async function start()
     }
 }
 start()
-app.listen(5500,(err)=>{
+app.listen(port,(err)=>{
 if(err)
 {
     console.log(err.message)
