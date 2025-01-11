@@ -27,8 +27,8 @@ async function register(req,res){
         return res.status(StatusCodes.CREATED).json({msg:"user created"})
         
        } catch (error) {
-        console.log("server error")
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: "something went wrong, try it again" });
+        console.log(error)
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: error});
         
        }
     
