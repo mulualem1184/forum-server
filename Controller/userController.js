@@ -40,7 +40,7 @@ async function login(req,res){
         return res.status(StatusCodes.BAD_REQUEST).json({ msg: "Please provide your account or password" });
        }
     try {
-        const [user] = await dbconnection.query("SELECT username, userId, password FROM users WHERE email LIKE ?", [`%${email}%`])
+        const [user] = await dbconnection.query("SELECT username, userId, password FROM users WHERE email = ?", [email])
        
         if (user.length==0)
         {  
