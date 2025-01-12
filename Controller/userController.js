@@ -44,13 +44,13 @@ async function login(req,res){
        
         if (user.length==0)
         {
-            return res.status(StatusCodes.BAD_REQUEST).json({ msg: "invalid credetial" });
+            return res.status(StatusCodes.BAD_REQUEST).json({ msg: "account with this name not exist" });
         }
         //  login cheking hashed password
         const ismatchpassword= await bcrypt.compare(password,user[0].password)   
         if (!ismatchpassword)   
             {
-                return res.status(StatusCodes.BAD_REQUEST).json({ msg: "invalid password" });  
+                return res.status(StatusCodes.BAD_REQUEST).json({ msg: "password not match" });  
             }  
         const username=user[0].username
         const userid=user[0].userId;
