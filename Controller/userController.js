@@ -43,8 +43,8 @@ async function login(req,res){
         const [user] = await dbconnection.query("select username, userId, password from users where email=? ",[email])
        
         if (user.length==0)
-        {  alert(user)
-            return res.status(StatusCodes.BAD_REQUEST).json({ msg: "account with this name not exist" });
+        {  
+            return res.status(StatusCodes.BAD_REQUEST).json({ msg: "account with this name not exist", user: user });
         }
         //  login cheking hashed password
         const ismatchpassword= await bcrypt.compare(password,user[0].password)   
