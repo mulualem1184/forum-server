@@ -44,7 +44,7 @@ async function login(req,res){
        
         if (user.length==0)
         {  
-            return res.status(StatusCodes.BAD_REQUEST).json({ msg: "account with this name not exist"  });
+            return res.status(StatusCodes.BAD_REQUEST).json({ msg: "account with this name not exist",  user: user, email:email });
         }
         //  login cheking hashed password
         const ismatchpassword= await bcrypt.compare(password,user[0].password)   
@@ -60,7 +60,7 @@ async function login(req,res){
         
         // console.log(user[0]?.userId)
     } catch (error) {
-        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: error.message, user: user, email:email });
+        return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ msg: error.message});
         
     }
     
