@@ -11,7 +11,7 @@ user: process.env.DATABASE_USER ||'u4bz25p8gzp7tudf',                           
 password: process.env.DATABASE_PASSWORD ||'xRPdhlMDaycUPj2jDSwR',                         // Database password
 database: process.env.DATABASE_DATABASE_NAME ||'begeifmysnlnhnz9shw9',                     // Database name
 port: process.env.DB_PORT || 3306,     
-connectionLimit:5  
+connectionLimit:3 
 })
 
 
