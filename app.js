@@ -2,8 +2,7 @@ require('dotenv').config()
 const express=require('express')
 const app=express();
 const cors=require('cors')
-const port = process.env.PORT || 8080;
-
+const port=8080;
 
 // database connection
 const dbconnection=require('./db/dbConfig')
@@ -35,7 +34,7 @@ async function start()
     }
 }
 start()
-app.listen(port,'0.0.0.0',(err)=>{
+app.listen(port,(err)=>{
 if(err)
 {
     console.log(err.message)
@@ -43,5 +42,6 @@ if(err)
     console.log(`listening on ${port}`);
 }
 })
+
 
 
